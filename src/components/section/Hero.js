@@ -1,8 +1,5 @@
-// import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "../ui/button";
-// import heroDashboard from "@/assets/hero-dashboard.jpg";
-
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
