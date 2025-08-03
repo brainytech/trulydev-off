@@ -1,26 +1,131 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Modern Tech Startup Design System - Dark Theme with Cyan Accents */
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark theme colors */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 93%;
+
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 93%;
+
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 9% 93%;
+
+    /* Cyan brand colors */
+    --primary: 194 93% 68%;
+    --primary-foreground: 220 13% 9%;
+    --primary-glow: 194 93% 78%;
+
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 220 9% 93%;
+
+    --muted: 220 13% 14%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 220 13% 16%;
+    --accent-foreground: 194 93% 68%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 220 9% 93%;
+
+    --border: 220 13% 16%;
+    --input: 220 13% 16%;
+    --ring: 194 93% 68%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(194 93% 68%), hsl(194 93% 78%));
+    --gradient-bg: linear-gradient(135deg, hsl(220 13% 9%), hsl(220 13% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(220 13% 11%), hsl(220 13% 13%));
+    --gradient-border: linear-gradient(135deg, hsl(194 93% 68% / 0.3), hsl(194 93% 78% / 0.1));
+    
+    /* Shadows */
+    --shadow-primary: 0 20px 40px -12px hsl(194 93% 68% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(220 13% 5% / 0.6);
+    --shadow-glow: 0 0 40px hsl(194 93% 78% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    background: var(--gradient-bg);
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply relative overflow-hidden bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg;
+    @apply hover:shadow-[var(--shadow-primary)] transition-all duration-300;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
+    @apply before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700;
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    @apply relative backdrop-blur-xl border border-white/10;
+    background: linear-gradient(135deg, hsl(220 13% 11% / 0.8), hsl(220 13% 13% / 0.6));
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-flow 3s ease-in-out infinite;
+  }
+
+  /* Feature card hover effect */
+  .feature-card {
+    @apply glass-card p-8 rounded-2xl cursor-pointer transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-[var(--shadow-primary)];
+  }
+
+  /* Floating animation */
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
