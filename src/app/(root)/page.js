@@ -1,6 +1,7 @@
 import Header from '@/components/Layout/Header'
 import About from '@/components/section/AboutUs'
 import Hero from '@/components/section/Hero'
+import Services from '@/components/section/Services'
 import Image from 'next/image'
 
 export default function Home () {
@@ -12,6 +13,9 @@ export default function Home () {
       <main className='sm:mt-20 mt-[150px]'>
         <div>
           <Hero />
+        </div>
+        <div>
+          <Services />
         </div>
         <div>
           <About />

@@ -74,7 +74,7 @@ const Hero = () => {
               {/* Main dashboard image */}
               <div className="relative glass-card p-4 rounded-3xl floating">
                 <img
-                  src={"https://bfe749f1-03f9-402f-93f7-344353a56eaf.lovableproject.com/src/assets/hero-dashboard.jpg"}
+                  src={"/dashboard.svg"}
                   alt="TechCraft Dashboard"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />

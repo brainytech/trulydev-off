@@ -95,7 +95,7 @@ const About = () => {
             <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl"></div>
             <div className="relative glass-card p-4 rounded-3xl">
               <img
-                src={"https://bfe749f1-03f9-402f-93f7-344353a56eaf.lovableproject.com/src/assets/team-collaboration.jpg"}
+                src={"/service-img-2.svg"}
                 alt="TechCraft Team"
                 className="w-full h-auto rounded-2xl"
               />
